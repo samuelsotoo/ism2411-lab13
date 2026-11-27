@@ -37,3 +37,20 @@ print(df['per_unit'].mean())
 
 print(df['region'].unique()) 
 print(df['region'].value_counts())
+
+"--- Exercise 7 ---"
+
+df_small = df[['region', 'product', 'revenue']]
+print(df_small.shape) 
+
+"--- Exercise 8 ---"
+
+import os
+
+df.to_csv('data/explored.csv', index=False)
+
+print(os.path.exists('data/explored.csv'))
+print(os.path.getsize('data/explored.csv'))
+
+with open('data/explored.csv') as f:
+    print(f.readline())
